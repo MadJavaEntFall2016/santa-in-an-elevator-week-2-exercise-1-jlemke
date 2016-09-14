@@ -1,6 +1,8 @@
 package edu.madisoncollege.entjava;
 
 
+import org.apache.log4j.Logger;
+
 /**
  * Created by paulawaite on 9/7/16.
  *
@@ -37,5 +39,24 @@ package edu.madisoncollege.entjava;
 
 public class SantaInAnElevator {
 
+    private final Logger logger = Logger.getLogger(this.getClass());
+
+    // ( = +1
+    // ) = -1
+
+    /**
+     * @param directions a string containing only '('s and ')'s, if it includes others it will give a wrong answer
+     * @return returns the floor number that santa would be on
+     */
+    public int whatFloor(String directions) {
+        int floor = 0;
+
+        // ))))() 6 -> ))))) 5    first.length - second.length = up ?
+        String onlyDown = directions.replace("(", "");
+        floor -= onlyDown.length();
+        floor += directions.length() - onlyDown.length();
+
+        return floor;
+    }
 
 }

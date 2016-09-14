@@ -38,5 +38,20 @@ public class ListTest {
         assertTrue("List missing inserted element", myList.contains(elementToInsert));
     }
 
+    @Test
+    public void testRemoveSuccess() {
+        myList.remove(2);
+
+        assertEquals("List size is incorrect", 2, myList.size());
+        assertTrue("List still contains element", !myList.contains("Item 3"));
+    }
+
+    @Test
+    public void testGetSuccess() {
+        myList.add("Item 4");
+
+        assertEquals("Item was added incorrectly", "Item 4", myList.get(3));
+    }
+
 
 }
