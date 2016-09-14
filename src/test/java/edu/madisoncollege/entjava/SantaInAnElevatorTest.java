@@ -34,14 +34,10 @@ public class SantaInAnElevatorTest {
     public void setUp() throws Exception {
         test1 = "((((((((";
         answer1 = 8;
-
         test2 = "))))";
         answer2 = -4;
-
         test3 = "()()";
         answer3 = "(())";
-
-
         File file = new File("C:\\Users\\Joe\\Documents\\GitHub\\santa-in-an-elevator-week-2-exercise-1-jlemke\\src\\main\\resources\\SantaUpDown.txt");
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
